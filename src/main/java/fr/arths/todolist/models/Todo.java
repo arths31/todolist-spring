@@ -10,7 +10,7 @@ public class Todo {
     @Id
     protected UUID id;
     protected String title;
-    protected Boolean state;
+    protected boolean state;
 
     public Todo() {
 
@@ -34,11 +34,11 @@ public class Todo {
         this.title = title;
     }
 
-    public Boolean getState() {
+    public boolean getState() {
         return state;
     }
 
-    public void setState(Boolean state) {
+    public void setState(boolean state) {
         this.state = state;
     }
 }
