@@ -3,6 +3,7 @@ package fr.arths.todolist.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -14,6 +15,8 @@ public class Todo {
 
     protected String description;
 
+    protected Date createdOn;
+
     public Todo() {
 
     }
@@ -23,6 +26,11 @@ public class Todo {
         this.state = false;
         this.id = UUID.randomUUID();
         this.description = null;
+        this.createdOn = new Date();
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
     }
 
     public String getDescription() {
