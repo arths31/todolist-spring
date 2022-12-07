@@ -12,6 +12,8 @@ public class Todo {
     protected String title;
     protected boolean state;
 
+    protected String description;
+
     public Todo() {
 
     }
@@ -20,6 +22,15 @@ public class Todo {
         this.title = title;
         this.state = false;
         this.id = UUID.randomUUID();
+        this.description = null;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public UUID getId() {

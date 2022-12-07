@@ -22,6 +22,7 @@ public class TodoController {
     public void construct() {
         var hello = new Todo("Hello");
         hello.setState(true);
+        hello.setDescription("world");
 
         this.todoRepository.save(hello);
         this.todoRepository.save(new Todo("Test"));
@@ -30,6 +31,11 @@ public class TodoController {
     @GetMapping
     private Iterable<Todo> list() {
         return this.todoRepository.findByOrderByStateAsc();
+    }
+
+    @GetMapping("/{id}")
+    private Optional<Todo> get(@PathVariable("id") UUID id) {
+        return this.todoRepository.findById(id);
     }
 
     @PatchMapping("/{id}")
